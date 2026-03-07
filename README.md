@@ -53,8 +53,9 @@ bash src/setup-rust.sh
 ### Claude Code 配置 (`claude/`)
 
 - 全局 CLAUDE.md 和 settings.json（部署到 `~/.claude/`）
-- agents/、commands/、tools/ 管理自定义和收集的资源
-- `/deploy` command 一键部署到 `~/.claude/`（symlink 方式）
+- agents/、commands/、skills/、tools/ 管理自定义和收集的资源
+- Skills：anthropics/skills（官方套件）、obra/superpowers、brainstorming
+- `/deploy` command 一键部署到 `~/.claude/`（symlink + plugin install）
 
 ## 目录结构
 
@@ -66,6 +67,7 @@ claude/        Claude Code 配置（通过 /deploy 部署）
   settings.json  全局设置（权限、MCP 等）
   scripts/       settings.json 中 command 类型引用的脚本
   agents/      自定义 agent + 收集的资源
-  commands/    自定义 command + 收集的资源
+  commands/    自定义 slash command（如 /deploy）+ 收集的资源
+  skills/      待安装的 plugin skills + 收集的资源
   tools/       自定义 MCP tool + 收集的资源
 ```

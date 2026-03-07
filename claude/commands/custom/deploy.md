@@ -10,6 +10,10 @@
 4. 将 `claude/commands/custom/` 下所有文件部署到 `~/.claude/commands/`
 5. 将 `claude/tools/custom/` 下的配置合并到 Claude Code 的 MCP 设置中
 6. 将 `claude/scripts/` 下的脚本部署到 `~/.claude/scripts/`
-7. 使用 **symlink** 方式部署，这样修改仓库文件即时生效
-6. 已存在的 symlink 跳过，目标是非 symlink 的已有文件时提示用户确认
-7. 部署完成后列出所有已部署的配置清单
+7. 安装 Skills（通过 `claude plugin install`）：
+   - anthropics/skills（skill-creator, docx, pdf, pptx, xlsx, webapp-testing, mcp-builder）
+   - obra/superpowers（brainstorm/plan/execute 全流程）
+   - 安装前检查是否已安装，已安装则跳过
+8. 使用 **symlink** 方式部署（步骤 1-6），这样修改仓库文件即时生效
+9. 已存在的 symlink 跳过，目标是非 symlink 的已有文件时提示用户确认
+10. 部署完成后列出所有已部署的配置清单（含 skills 安装状态）
