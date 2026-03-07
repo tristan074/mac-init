@@ -12,6 +12,9 @@ bash src/setup-common.sh
 bash src/setup-python.sh
 bash src/setup-frontend.sh
 bash src/setup-rust.sh
+
+# 3. Claude Code 配置（在 Claude Code 中执行）
+/deploy
 ```
 
 ## 已实现功能
@@ -47,13 +50,22 @@ bash src/setup-rust.sh
 - Cargo 工具：cargo-watch, cargo-edit, bacon, sccache
 - sccache 配置为 rustc wrapper
 
+### Claude Code 配置 (`claude/`)
+
+- 全局 CLAUDE.md 和 settings.json（部署到 `~/.claude/`）
+- agents/、commands/、tools/ 管理自定义和收集的资源
+- `/deploy` command 一键部署到 `~/.claude/`（symlink 方式）
+
 ## 目录结构
 
 ```
-src/           安装脚本
+src/           安装脚本（bash 执行）
 docs/          各环境的工具说明与常用命令参考
+claude/        Claude Code 配置（通过 /deploy 部署）
+  CLAUDE.md      全局指令
+  settings.json  全局设置（权限、MCP 等）
+  scripts/       settings.json 中 command 类型引用的脚本
+  agents/      自定义 agent + 收集的资源
+  commands/    自定义 command + 收集的资源
+  tools/       自定义 MCP tool + 收集的资源
 ```
-
-## 参考文档
-
-各环境的详细工具说明和常用命令见 `docs/` 目录。
