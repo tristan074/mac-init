@@ -85,8 +85,19 @@ install_general_extensions() {
         ms-vscode-remote.remote-ssh
         yzhang.markdown-all-in-one
         davidanson.vscode-markdownlint
+        timonwong.shellcheck
+        mads-hartmann.bash-ide-vscode
+        mkhl.shfmt
     )
     install_extensions "General" "${extensions[@]}"
+
+    # shfmt binary required by mkhl.shfmt extension
+    if brew list shfmt &>/dev/null; then
+        info "shfmt already installed, skipping"
+    else
+        info "Installing shfmt (required by shfmt extension)..."
+        brew install shfmt
+    fi
 }
 
 install_frontend_extensions() {

@@ -47,6 +47,9 @@ bash src/setup-vscode.sh
 | Remote - SSH | `ms-vscode-remote.remote-ssh` | SSH 远程开发，微软官方维护 |
 | Markdown All in One | `yzhang.markdown-all-in-one` | 快捷键、自动 TOC、表格格式化、列表续行 |
 | markdownlint | `davidanson.vscode-markdownlint` | Markdown lint 规则检查 + 自动修复 |
+| ShellCheck | `timonwong.shellcheck` | Shell 脚本实时 lint，自带 shellcheck 二进制 |
+| Bash IDE | `mads-hartmann.bash-ide-vscode` | Shell 脚本 LSP（跳转定义、补全、引用、重命名） |
+| shfmt | `mkhl.shfmt` | Shell 脚本格式化（需 `brew install shfmt`，脚本自动安装） |
 
 ---
 
